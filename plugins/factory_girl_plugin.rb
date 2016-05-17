@@ -4,7 +4,7 @@
 LIB = <<-LIB
 begin
   require 'factory_girl'
-  # Sequel does not have a save! method
+  # Sequel does not have save! method
   if defined?(Sequel)
     FactoryGirl.define do
       to_create { |instance| instance.save }
@@ -15,7 +15,7 @@ rescue LoadError
 end
 LIB
 
-create_file 'lib/factory_girl.rb', LIB
+create_file 'lib/plugins/factory_girl.rb', LIB
 
 GEMFILE = <<-GEMFILE
 group :development, :test do
